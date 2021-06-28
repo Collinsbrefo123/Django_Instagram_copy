@@ -1,0 +1,25 @@
+{% extends 'Posts/base_post.html' %}
+{% load static %}
+{% block title %}Profile page{% endblock %}
+{% block contents %}
+    <h2>profile page</h2>
+
+
+
+
+
+    <div class="container">
+  <div class="row">
+    <div class="col-4">
+ <img src="{% static 'img/avatar_m2.jpg' %}" alt="" width="100rem" class="img-thumbnail rounded-circle small">
+    </div>
+    <div class="col-4">
+    {{ user.first_name }} {{ user.last_name }}
+    </div>
+    <div class="col-4">
+   feeds count is {{ feeds.count }}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'Posts/base_post.html' %}
+
+{% block title %}Create Feed{% endblock %}
+{% block contents %}
+    To create feed
+    {{ error }}
+    <div class="container text-center mx-auto">
+
+        <form method="post" class="mx-auto text-center" enctype='multipart/form-data' style="width: 30em">
+            {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleInputEmail1">Feed Title</label>
+    <input type="text" class="form-control" name="feedTitle" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter title">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1"> textarea</label>
+    <textarea class="form-control" name="caption" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+   <div class="form-group">
+    <label for="InputFile">Add your file</label>
+    <input type="file" name="imgFeed" >
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+    </div>
+
+
+
+{% endblock %}

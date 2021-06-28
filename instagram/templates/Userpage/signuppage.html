@@ -49,9 +49,9 @@
                 <div class="card-body">
                     <h2 class="card-title font-weight-bolder igtitle">Instagram Mod</h2>
                     <div class="pt-3">
-                                            <h4 class="alert alert-danger">{{ error }}</h4>
+                                            <h4 id="error" class="alert alert-danger">{{ error }}</h4>
 
-                        <form class="pt-2" method="POST">
+                        <form class="pt-2" method="POST" action="">
                             {% csrf_token %}
                             <div class="form-group ">
                                 <input type="text" name="username" placeholder="Username" class="form-control"
@@ -100,11 +100,24 @@
             {#        Sign up link    #=#}
             <div class="card text-center mx-auto " style="width: 22rem;">
                 <div class="card-body">
-                    <p class="card-text">Have an account? <a href="{% url 'signuppage' %}" class="card-link">Sign up</a></p>
+                    <p class="card-text">Have an account? <a href="{% url 'loginpage' %}" class="card-link">Log in</a></p>
 
                 </div>
             </div>
         </div>
     </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+
+        $( document ).ready(function() {
+            $('#error').hide()
+            {% if error %}
+                $('#error').show()
+            {% endif %}
+        });
+
+    </script>
 
 {% endblock %}
