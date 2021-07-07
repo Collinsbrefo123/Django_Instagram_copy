@@ -3,17 +3,58 @@
 {% block title %}Instagram page{% endblock %}
 {% block contents %}
     Welcome {{ user.username }}
-
-    <form action="{% url 'logoutpage' %}" method="post">
-    {% csrf_token %}
-        <button type="submit" class="btn btn-primary">Logout</button>
-    </form>
-    <br>
-    <a href="{% url 'createfeed' %}"> Create a feed</a>
-
+    {##}
+    {#    <form action="{% url 'logoutpage' %}" method="post">#}
+    {#    {% csrf_token %}#}
+    {#        <button type="submit" class="btn btn-primary">Logout</button>#}
+    {#    </form>#}
+    {#    <br>#}
+    {#    <a href="{% url 'createfeed' %}"> Create a feed</a>#}
+    {##}
+    {#    {% if feeds %}#}
+    {#        {% for feed in feeds %}#}
+    {#            <img src="{{ feed.imgFeed.url}}" alt="">#}
+    {#            {{ feed.caption }}#}
+    {#        {% endfor %}#}
+    {#    {% endif %}#}
     {% if feeds %}
         {% for feed in feeds %}
-            {{ feed.imgFeed }}
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+
+
+                <div class="col-md-6">
+                    <div class="card" style="width: 30rem;">
+                        <img class="card-img-top" src="{{ feed.imgFeed.url }}" alt="Card image cap">
+                        <div class="card-body">
+                            <div>
+{#                                 emojis #}
+                                <i id="changecolor" class='bx bxs-heart bx-md changes colorchange' ></i>
+                                <i class='bx bx-message-error bx-md' ></i>
+                            </div>
+                            <div>
+                                 <p class="card-text ">Some quick example text to build on the card title and make up the
+                                bulk of the card's content.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-3 ml-auto">
+                </div>
+            </div>
+            <br>
         {% endfor %}
     {% endif %}
+
+<script>
+	{#$(document).ready(function(){#}
+	{#				$('.colorchange').click(function () {#}
+    {#                     document.getElementById('#changecolor').style.color = "red";#}
+    {#                });#}
+	{#			});#}
+</script>
+
 {% endblock %}

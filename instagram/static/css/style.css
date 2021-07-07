@@ -14,3 +14,6 @@ body{
     font-family: 'Satisfy', cursive;
 
 }
+.colorchange:active{
+    color: red;
+}

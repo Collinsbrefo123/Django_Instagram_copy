@@ -9,17 +9,23 @@
 
 
     <div class="container">
-  <div class="row">
-    <div class="col-4">
- <img src="{% static 'img/avatar_m2.jpg' %}" alt="" width="100rem" class="img-thumbnail rounded-circle small">
+        <div class="row bg-white pt-3 rounded pb-2">
+            <div class="col-4">
+                <img src="{% static 'img/avatar_m2.jpg' %}" alt="" width="150rem" class=" rounded-circle small ml-auto">
+            </div>
+            <div class="col-8">
+                <p><b class="text-muted">{{ user.username|capfirst }}</b>
+                    <button class="btn btn-outline-dark ml-2">Edit Profile</button> <i class='bx bx-certification bx-sm'></i>
+                </p>
+                <div>
+                    {{ feeds.count }} feed/s
+                </div>
+                <div class="pt-2">
+                    {{ user.first_name|capfirst }} {{ user.last_name|capfirst }}
+                </div>
+            </div>
+
+        </div>
     </div>
-    <div class="col-4">
-    {{ user.first_name }} {{ user.last_name }}
-    </div>
-    <div class="col-4">
-   feeds count is {{ feeds.count }}
-    </div>
-  </div>
-</div>
 
 {% endblock %}
