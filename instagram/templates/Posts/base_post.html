@@ -37,9 +37,6 @@
                     <a class="nav-link " href="#"><i class='bx bx-message-check bx-md'></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link pt-1" href="#"><i class='bx bxs-log-out-circle bx-md'></i></a>
-                </li>
-                <li class="nav-item">
                      <form action="{% url 'logoutpage' %}" method="post">
                     {% csrf_token %}
                         <button type="submit" class="btn btn-default pt-1"><i class='bx bxs-log-out-circle bx-md'></i></button>
